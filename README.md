@@ -1,6 +1,8 @@
 # TPE2025
 
 D'Annunzio Benjamín, dannunzio98@gmail.com - 
+
+
 Tematica: Catalogo de Jugadores de futbol y Equipos.
   La pagina gestiona informacion sobre equipos de futbol y sus jugadores, dando atributos a cada uno por los cuales se puede ordenar la información
 Relacion 1 a N:
