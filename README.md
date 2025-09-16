@@ -1,6 +1,6 @@
 # TPE2025
 
-D'Annunzio Benjamín, dannunzio98@gmail.com - 
+D'Annunzio Benjamín, dannunzio98@gmail.com - Chatelain Francisco, franchatelain2000@gmail.com
 
 
 Tematica: Catalogo de Jugadores de futbol y Equipos.   
