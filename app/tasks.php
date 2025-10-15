@@ -1,65 +1,9 @@
 <?php
 require_once './app/db.php';
 
-function showTeams() {
-    require 'templates/header.php';
 
-    // obtengo los registros
-    $team = getTeams();
 
-    require 'templates/form_alta.php';
-    ?>
 
-    <table class="table table-striped">
-        <thead class="table-success">
-            <tr>
-                <th>NOMBRE</th>
-                <th>CIUDAD</th>
-                <th>PAÍS</th>
-                <th>LIGA</th>
-                <th>AÑO</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach($team as $team) { ?>
-                <tr>
-                    <td><b><?php echo $team->nombre; ?></b></td>
-                    <td><?php echo  $team->ciudad; ?></td>
-                    <td><?php echo $team->pais; ?></td>
-                    <td><?php echo $team->liga; ?></td>
-                    <td><?php echo $team->anio; ?></td>
-                    <td>
-                        <a href="eliminar/<?php echo $team->id_equipo; ?>" type="button" class="btn btn-danger btn-sm">Borrar</a>
-                        <a href="editar/<?php echo $team->id_equipo; ?>" type="button" class="btn btn-outline-success">Editar</a>
-                        <a href="jugadores/<?php echo $team->id_equipo; ?>" type="button" class="btn">Ver Equipo</a>
-                    </td>
-                </tr>
-            <?php } ?>
-        </tbody>
-    </table>
-
-    <?php
-    require 'templates/footer.php';
-}
-
-function addTeam() {
-    // obtengo los datos del formulario
-    $nombre = $_POST['Nombre'];
-    $ciudad = $_POST['Ciudad'];
-    $pais = $_POST['Pais'];
-    $liga = $_POST['Liga'];
-    $anio = $_POST['Año'];
-
-    // inserto en la DB
-    $id = insertTeam($nombre, $ciudad, $pais, $liga, $anio);
-
-    if ($id) {
-        header('Location: ' . BASE_URL);
-    } else {
-        echo "Error al insertar el registro";
-    }
-}
 
 function removeTeam($id) {
     deleteTeam($id);

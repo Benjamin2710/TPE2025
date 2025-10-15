@@ -1,5 +1,6 @@
 <?php
-require_once 'app/tasks.php';
+require_once 'app/controllers/task.controller.php';
+require_once 'app/models/task.model.php';
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -13,19 +14,24 @@ $params = explode('/', $action);
 
 switch ($params[0]) {
     case 'listar':
-        showTeams();
+        $controller = new TeamController();
+        $controller->showTeams();
         break;
     case 'agregar':
-        addTeam();
+        $controller = new TeamController();
+        $controller->addTeam();
         break;
     case 'eliminar':
-        removeTeam($params[1]);
+        $controller = new TeamController();
+        $controller->removeTeam($params[1]);
         break;
     case 'editar':
-        editTeam($params[1]);
+        $controller = new TeamController();
+        $controller->editTeam($params[1]);
         break;
     case 'jugadores':
-        showPlayers();
+        $controller = new TeamController();
+        $controller->showPlayers();
         break;
     default: 
         echo "404 Page Not Found";
