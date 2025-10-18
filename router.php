@@ -1,6 +1,6 @@
 <?php
-require_once 'app/controllers/task.controller.php';
-require_once 'app/models/task.model.php';
+require_once 'app/controllers/team.controller.php';
+require_once 'app/models/team.model.php';
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 

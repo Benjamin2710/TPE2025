@@ -1,7 +1,7 @@
 <?php
 require_once './app/models/jugadores.model.php';
 require_once './app/views/jugadores.view.php';
-require_once './app/models/club.model.php';
+require_once './app/models/team.model.php';
 require_once './app/helpers/AuthHelper.php';
 
 class JugadorController{
