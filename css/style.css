@@ -1,12 +1,85 @@
-.item-task {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+*{
+    font-family: "Noto Sans Cherokee", sans-serif;
 }
 
-.item-task.finalizada {
-    opacity: 0.5;
-    text-decoration: line-through;
+.navbar-brand{
+    font-weight: 700;
+    margin-left: 43%;
+    color: white;
 }
+.logo-header{
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+    background-image: url(../img/logo-header.png) ;
+}
+.logo-login{
+    background-image: url(../img/logo-login.png);
+    width: 35px;
+    height: 35px;
+    margin-left: 700px;
+}
+
+.text-login{
+    text-decoration: none;
+    color: white;
+}
+.logo-logout{
+    background-image: url(../img/logout-icon.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 35px;
+    height: 35px;
+    margin-left: 700px;
+}
+.zona:hover {
+    color: white; 
+  
+}
+header.header {
+  background-image: url('../img/fondo-header.png'); /* ruta a tu imagen */
+  background-size: cover;        /* la imagen cubre todo el espacio */
+  background-position: center;   /* centrada */
+  background-repeat: no-repeat;  /* sin repetirse */
+  height: 200px;                 /* o el alto que quieras */
+}
+
+
+
+#btn-ver{
+    background-color: rgb(111, 212, 255);
+    border: 1px solid rgb(112, 97, 97);
+    color: rgb(50, 51, 51);
+    width: 70px;
+    height: 30px;
+}
+#btn-volver{
+    width: 40px;
+    height: 40px;
+    background-image: url(../img/atras.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 60px;
+}
+
+
+#btn-editar{
+    width: 20px;
+    height: 20px;
+    background-color: rgb(255, 255, 255);
+    background-image: url(../img/edit.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: 6px;
+    
+
+}
+.nombre-jug{
+    font-size: 25px;
+}
+
 
 

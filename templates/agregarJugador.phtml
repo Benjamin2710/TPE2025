@@ -1,0 +1,45 @@
+<div class="container mt-5">
+    <div class="card text-left shadow-sm mx-auto" style="background-color: rgba(255, 255, 255, 0.8);">
+        <div class="card-header text-center" style="background-color: rgba(0, 0, 0, 0.9); color: white;">
+            <h4 class="mb-0" style="font-size: 1.2rem; text-transform: uppercase;">Agregar Jugador</h4>
+        </div>
+        <div class="card-body">
+            <form action="newJugador" method="POST" class="row g-3 d-flex justify-content-center">
+                <div class="col-md-2">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" required>
+                </div>
+                <div class="col-md-2">
+                    <label for="pais" class="form-label">Pais</label>
+                    <input type="text" class="form-control" name="pais" required>
+                </div>
+                <div class="col-md-2">
+                    <label for="posicion" class="form-label">Posicion</label>
+                    <input type="text" class="form-control" name="posicion" required>
+                </div>
+                <div class="col-md-2">
+                    <label for="fecha_nacimiento" class="form-label">fecha de nacimiento</label>
+                    <input type="date" class="form-control" name="fecha_nacimiento" required>
+                </div>
+                <div class="col-md-2">
+                    <label for="puntaje" class="form-label">Puntaje</label>
+                    <input type="number" class="form-control" name="puntaje" required>
+                </div>
+                
+                <div class="col-md-2">
+                    <label for="equipo" class="form-label">Club</label>
+                    <select name="id_equipo" id="equipo" class="form-select" required>
+                        <option selected disabled>Seleccionar...</option>
+                        <?php foreach ($equipos as $equipo): ?>
+                            <option value="<?= $equipo->id_equipo ?>"><?= $equipo->nombre ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="col-md-12 d-flex justify-content-center mt-3">
+                    <button type="submit" class="btn btn-success">Agregar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

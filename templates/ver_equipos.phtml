@@ -1,0 +1,61 @@
+<?php require 'templates/layout/header.phtml' ?>
+
+<a id="btn-volver" href="equipos/" type="button" class='btn btn-details btn-sm ml-auto'></a>
+
+<div class="container mt-5">
+    <div class="card text-left shadow-sm mx-auto" style="width: 25rem; height: auto;">
+        <div class="card-header text-center" style="background-color: rgba(47, 100, 9, 0.8); color: white;">
+            <h2 class="mb-0"><b><?= $equipo->nombre ?></b></h2>
+        </div>
+        <div class="card-body d-flex flex-column" style="height: 100%;">
+            <ul class="list-group list-group-flush flex-fill">
+
+            
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <strong>Pais: </strong> <span><?= $equipo->pais ?></span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <strong>Año de fundacion:</strong> <span><?= $equipo->anio ?></span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <strong>Liga:</strong> <span><?= $equipo->liga ?></span>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+<h2 class="mb-5 mt-5 fw-bold text-center text-uppercase" style="font-family: 'Poppins', sans-serif; font-size: 2rem; background: -webkit-linear-gradient(45deg, #191b1cff, #495057); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 3px;">
+  Jugadores
+</h2> 
+
+<ul class="list-group">
+  <?php foreach ($jugadores as $jugador) { ?>
+    <li class="list-group-item shadow-sm rounded mb-3 p-3 d-flex justify-content-between align-items-center" style="border-left: 44px solid #4cb120ff;">
+        <div class="d-flex align-items-center">
+          
+          <i class="bi bi-person-circle" style="font-size: 2rem; color: #6c757d; margin-right: 15px;"></i> 
+          <div>
+            <h4 class="mb-1 fw-bold"><?= $jugador->nombre ?></h4> 
+          </div>
+        </div>
+        <div>
+          <!-- Botón de ver jugador con estilo gris -->
+          <a href="viewJugador/<?= $jugador->id_jugador ?>" class="btn btn-secondary btn-sm fw-bold mx-2">Ver mas</a> 
+        </div>
+    </li>
+  <?php } ?>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+<?php require 'templates/layout/footer.phtml' ?>

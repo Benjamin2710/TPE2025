@@ -1,0 +1,55 @@
+<?php require 'templates/layout/header.phtml' ?>
+<a id="btn-volver" href="jugadores/" type="button" class='btn btn-details btn-sm ml-auto'></a>
+
+<div class="container mt-5">
+    <div class="card text-left shadow-sm mx-auto" style="background-color: rgba(255, 255, 255, 0.8); max-width: 600px;">
+        <div class="card-header text-center" style="background-color: rgba(0, 0, 0, 0.9); color: white;">
+            <h4 class="mb-0" style="font-size: 1.2rem; text-transform: uppercase;">Editar Jugador</h4>
+        </div>
+        <div class="card-body">
+            <form action="editJugador/<?= $jugador->id_jugador ?>" method="POST" class="row g-3 d-flex justify-content-center">
+                <div class="col-md-6">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" value="<?= $jugador->nombre ?>" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="pais" class="form-label">País</label>
+                    <input type="text" class="form-control" name="pais" value="<?= $jugador->pais ?>" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="posicion" class="form-label">Posición</label>
+                    <input type="text" class="form-control" name="posicion" value="<?= $jugador->posicion ?>" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="fecha_nacimiento" class="form-label">Fecha de Nacimiento</label>
+                    <input type="date" class="form-control" name="fecha_nacimiento" value="<?= $jugador->fecha_nacimiento ?>" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="puntaje" class="form-label">Puntaje</label>
+                    <input type="number" class="form-control" name="puntaje" value="<?= $jugador->puntaje ?>" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="club" class="form-label">Club</label>
+                    <select name="id_equipo" id="equipo" class="form-select">
+                        <option value="" disabled>Seleccionar...</option>
+                        <?php if ($jugador->id_equipo) { ?>
+                            <option value="<?= $jugador->id_equipo ?>" selected><?= $jugador->nombre_club ?></option>
+                        <?php } else { ?>
+                            <option value="" selected>Sin club</option>
+                        <?php } ?>
+                        <?php foreach ($equipos as $equipo) { ?>
+                            <?php if ($equipo->id_equipo != $jugador->id_equipo) { ?>
+                                <option value="<?= $equipo->id_equipo ?>"><?= $equipo->nombre ?></option>
+                            <?php } ?>
+                        <?php } ?>
+                    </select>
+                </div>
+                <div class="col-md-12 d-flex justify-content-center mt-3">
+                    <button type="submit" class="btn btn-success">Modificar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<?php require 'templates/layout/footer.phtml' ?>

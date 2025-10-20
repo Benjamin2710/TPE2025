@@ -1,0 +1,58 @@
+<?php require 'templates/layout/header.phtml' ?>
+
+
+<a id="btn-volver" href="home" type="button" class='btn btn-details btn-sm ml-auto'></a>
+
+<section class="vh-50">
+  <div class="container-fluid h-100 d-flex justify-content-center align-items-center">
+    <div class="row justify-content-center w-100">
+      <div class="col-sm-10 col-md-8 col-lg-6 text-white"> <!-- Columna más ancha -->
+
+        <!-- Div gris transparente -->
+        <div style="background-color: rgba(0, 100, 50); padding: 30px; border-radius: 10px;"> <!-- Más padding -->
+          <div class="d-flex flex-column align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+
+            <form method='POST' action='login' style="max-width: 40rem; width: 100%;" class="d-flex flex-column align-items-center"> <!-- max-width ajustado -->
+
+              <h1>
+                Ingreso de usuarios
+              </h1>
+
+              <div data-mdb-input-init class="form-outline mb-4 w-100">
+                <label class="form-label" for="form2Example18">Usuario</label>
+                <input type="text" id="usuario" name='usuario' class="form-control form-control-lg" />
+              </div>
+
+              <div data-mdb-input-init class="form-outline mb-4 w-100">
+                <label class="form-label" for="form2Example28">Contraseña</label>
+                <input type="password" id="contrasenia" name='contrasenia' class="form-control form-control-lg" />
+              </div>
+
+             
+
+              <div class="pt-1 mb-4 w-100 d-flex justify-content-center">
+                <button 
+                  data-mdb-button-init 
+                  data-mdb-ripple-init 
+                  style="background-color: rgb(52, 180, 52); color: white; border: none;" 
+                  class="btn btn-lg btn-block" 
+                  type="submit">
+                  Log-in
+                </button>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+               <?php $hashedPassword = password_hash('admin', PASSWORD_BCRYPT);
+               echo $hashedPassword;
+ ?>    
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<?php require 'templates/layout/footer.phtml';
