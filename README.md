@@ -4,15 +4,15 @@
 
 Desplegar sitio en servidor con Apache y mySQL:
 
- 1- instalar XAMPP con los paquietes de Apache (nos dará acceso al servidor web) y MySQL ( nos permite crear y manejar bases de datos). 
+ 1- Instalar XAMPP con los paquetes de Apache (nos dará acceso al servidor web) y MySQL ( nos permite crear y manejar bases de datos). 
  
- 2- guardar el proyecto "TPE2025" o cualquiera que quieras abrir dentro de la carpeta  "htdocs" donded instalaste el XAMPP (\xampp\htdocs\TPE2025\)
+ 2- Guardar el proyecto "TPE2025" o cualquiera que quieras abrir dentro de la carpeta  "htdocs" donde instalaste el XAMPP (\xampp\htdocs\TPE2025\)
  
- 3- abrir el programa XAMPP, y dentro del Panel de Control activar los modulos "Apache" y "MySQL" para que entren en funcionamiento 
+ 3- Abrir el programa XAMPP, y dentro del Panel de Control activar los modulos "Apache" y "MySQL" para que entren en funcionamiento 
  
- 4- con MySQL activado ingresar en 'http://localhost/phpmyadmin' crear una base de datos e importar la base de datos dedl proyecto.
+ 4- Con MySQL activado ingresar en 'http://localhost/phpmyadmin' crear una base de datos e importar la base de datos dedl proyecto.
  
- 5- ingresar en http://localhost/TPE2025/ para acceder a la aplicacion.
+ 5- Ingresar en http://localhost/TPE2025/ para acceder a la aplicacion.
  
 
 
