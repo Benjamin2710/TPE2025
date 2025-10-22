@@ -10,38 +10,42 @@ class ClubModel {
         $this->db = $conex->conexion(); // Método conexión
     }
 
-    // Obtener todos los equipos
+    // Obtiene los equipos
     public function getEquipos() {
         $query = $this->db->prepare('SELECT * FROM equipos');
         $query->execute();
         return $query->fetchAll(PDO::FETCH_OBJ); 
     }
 
-    // Obtener un equipo por ID
+    // Busca por ID
     public function getEquipo($id) {    
         $query = $this->db->prepare('SELECT * FROM equipos WHERE id_equipo = ?');
         $query->execute([$id]);   
         return $query->fetch(PDO::FETCH_OBJ);
     }
 
-    // Insertar un nuevo equipo
+    // Inserta nuevo equipo
    public function insertEquipo($nombre, $ciudad, $pais, $liga, $anio) { 
     $query = $this->db->prepare('INSERT INTO equipos(nombre, ciudad, pais, liga, anio) VALUES (?, ?, ?, ?, ?)');
     $query->execute([$nombre, $ciudad, $pais, $liga, $anio]);
-    return $this->db->lastInsertId();
+    
+       
+       return $this->db->lastInsertId();
 }
 
 
-    // Borrar un equipo por IDa
-    public function eraseEquipo($id) {
-        $query = $this->db->prepare('DELETE FROM equipos WHERE id_equipo = ?');
-        $query->execute([$id]);
-    }
+   
 
-    // Actualizar un equipo
+    // Actualiza
     public function updateEquipo($id, $nombre, $ciudad, $pais, $liga, $anio) {
         $query = $this->db->prepare('UPDATE equipos SET nombre = ?, ciudad = ?, pais = ?, liga = ?, anio = ? WHERE id_equipo = ?');
         $query->execute([$nombre, $ciudad, $pais, $liga, $anio, $id]);
+    }
+
+     // Borra, necesita id
+    public function eraseEquipo($id) {
+        $query = $this->db->prepare('DELETE FROM equipos WHERE id_equipo = ?');
+        $query->execute([$id]);
     }
 
 }
