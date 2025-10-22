@@ -20,14 +20,7 @@ class JugadorController {
         $this->view = new JugadorView();
     }
 
-    public function showJugadores() {
-        // obtengo las tareas de la DB
-        $jugadores = $this->model->getJugadores();
-        $equipos = $this->modelClub->getEquipos();
-
-        // mando las tareas a la vista
-        return $this->view->showJugadores($jugadores,$equipos);
-    }
+    
     public function showJugador($id) {
         // obtengo las tareas de la DB
         $jugador = $this->model->getJugador($id);
@@ -38,6 +31,15 @@ class JugadorController {
 
 
         return $this->view->showJugador($jugador);
+    }
+
+    public function showJugadores() {
+        // obtengo las tareas de la DB
+        $jugadores = $this->model->getJugadores();
+        $equipos = $this->modelClub->getEquipos();
+
+        // mando las tareas a la vista
+        return $this->view->showJugadores($jugadores,$equipos);
     }
 
     public function addJugador() {
@@ -69,6 +71,7 @@ class JugadorController {
         $posicion = $_POST['posicion'];
         $fecha_nacimiento = $_POST['fecha_nacimiento'];
         $puntaje = $_POST['puntaje'];
+        
         $id_equipo = $_POST['id_equipo'];
         
     
@@ -107,7 +110,9 @@ class JugadorController {
         if(!empty($jugador)) {
         $this->view->showEdit($jugador,$equipos);
         } else {
-            $this->view->showError('jugador no existe');
+
+            
+            $this->view->showError('jugador no existe'); // Hay que poner un 4040?
         }
         
     }
@@ -123,6 +128,7 @@ class JugadorController {
         $posicion = $_POST['posicion'];
         $fecha_nacimiento = $_POST['fecha_nacimiento'];
         $puntaje = $_POST['puntaje']; 
+        // equipo
         $id_equipo = $_POST['id_equipo'];
 
         $this->model->updateJugador($id, $nombre, $pais, $posicion, $puntaje, $fecha_nacimiento, $id_equipo);
