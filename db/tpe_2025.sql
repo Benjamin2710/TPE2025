@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-10-2025 a las 21:25:40
+-- Tiempo de generación: 22-10-2025 a las 03:02:37
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -46,8 +46,8 @@ INSERT INTO `equipos` (`id_equipo`, `nombre`, `escudo`, `ciudad`, `pais`, `liga`
 (3, 'River Plate', '', 'Buenos Aires', 'Argentina', 'Liga Profesional Argentina', 1901),
 (7, 'Real Madrid', '', 'Madrid', 'España', 'La Liga', 1902),
 (9, 'Barcelona', '', 'Barcelona', 'España', 'La Liga', 1899),
-(10, 'Manchester United', '', 'Manchester', 'Inglaterra', 'Premier League', 1878),
-(11, 'Manchester United', '', 'Manchester', 'Inglaterra', 'Premier League', 1878);
+(11, 'Manchester United', 'asdasd', 'Manchester', 'Inglat', 'Premier League', 1878),
+(14, 'Aldosivi', '', 'Mar del Plata', 'Argentina', 'Liga profesional futbol', 1913);
 
 -- --------------------------------------------------------
 
@@ -71,7 +71,16 @@ CREATE TABLE `jugadores` (
 
 INSERT INTO `jugadores` (`id_jugador`, `nombre`, `pais`, `posicion`, `puntaje`, `fecha_nacimiento`, `id_equipo`) VALUES
 (2, 'Edinson Cavani', 'Uruguay', 'CENTRO DELANTERO', 88, '1987-02-14', 1),
-(3, 'Sergio Romero', 'Argentina', 'ARQUERO', 78, '1987-02-22', 1);
+(7, 'Ayrton Preciado', 'Ecuador', 'MED', 77, '1994-07-17', 14),
+(9, 'Vinicius Jr', 'Brasil', 'delantero', 88, '2000-07-12', 7),
+(10, 'Pedro Gonzalez', 'España', 'Mediocampista', 80, '2002-11-25', 9),
+(11, 'Jadon Sancho', 'Inglaterra', 'Delantero', 77, '2000-03-25', 11),
+(12, 'Miguel Borja', 'Colombia', 'Delantero', 70, '1993-01-26', 3),
+(13, 'Facundo Colidio', 'Argentina', 'Delantero', 72, '2000-01-04', 3),
+(14, 'Exequiel Zeballos', 'Argentina', 'Delantero', 70, '2002-04-24', 1),
+(15, 'Sergio Romero', 'Argentina', 'Arquero', 68, '1987-02-22', 1),
+(16, 'Roberet Lewandowski', 'Polonia', 'Delantero', 82, '1988-08-21', 9),
+(17, 'Jude Bellingham', 'Inglaterra', 'Mediocampista', 88, '2003-06-29', 7);
 
 -- --------------------------------------------------------
 
@@ -123,13 +132,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `equipos`
 --
 ALTER TABLE `equipos`
-  MODIFY `id_equipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_equipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `jugadores`
 --
 ALTER TABLE `jugadores`
-  MODIFY `id_jugador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_jugador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
